@@ -1,3 +1,10 @@
+/*var login = '<li><a href="/login">Login</a></li>\';
+
+axios.post('/getUserLogado')
+.then(function(response) {
+	sess = response.data; data1.result = sess.email
+	});*/
+
 Vue.component('app-header', {
 	template: '\
 		<div>\
@@ -11,7 +18,9 @@ Vue.component('app-header', {
 					<li><a href="/sobre">Sobre a Empresa</a></li>\
 					<li><a href="#">Eventos</a></li>\
 					<li><a href="#">Produtos</a></li>\
-					<li><a href="#">Login</a></li>\
+					<li><a href="/login">Login</a></li>\
+					<li><a href="/logout">Sair</a></li>\
+					<li><a href="/cadastro">Cadastre-se</a></li>\
 					<li><a href="#">Fale Conosco</a></li>\
 		        </ul>\
 			</div>\

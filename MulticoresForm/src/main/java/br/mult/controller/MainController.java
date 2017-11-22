@@ -21,4 +21,14 @@ public class MainController {
 	public String mostraCadastro() {
 		return "cadastro";
 	}
+	
+	@GetMapping("/usuarios/{id}/update")
+	public String editarPerfil() {
+		return "editar-perfil";
+	}
+	
+	@GetMapping("/login")
+	public String mostraLogin() {
+		return "login";
+	}
 }

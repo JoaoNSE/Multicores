@@ -1,0 +1,18 @@
+<nav th:fragment="header" class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+      		<a class="navbar-brand" href="#">Multicores Formatura</a>
+		</div>
+		<ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+			<li><a href="/sobre">Sobre a Empresa</a></li>
+			<li><a href="#">Eventos</a></li>
+			<li><a href="#">Produtos</a></li>
+			<li><a href="/login" th:text="Login" th:unless="${session.usuarioLogado != null}">[...]</a></li>
+			<li><a href="/logout" th:text="Sair" th:unless="${session.usuarioLogado == null}">[...]</a></li>
+			<li><a href="/cadastro" th:text="Cadastre-se" th:unless="${session.usuarioLogado != null}">[...]</a></li>
+			<li><a href="#">Fale Conosco</a></li>
+			<li><a th:href="@{'/usuarios/' + ${session.usuarioLogado.id} + '/update'}" th:text="Perfil" th:unless="${session.usuarioLogado == null}">[...]</a></li>
+        </ul>
+	</div>
+</nav>

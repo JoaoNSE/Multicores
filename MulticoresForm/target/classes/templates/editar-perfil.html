@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>Cadastro</title>
+<title>Perfil</title>
 
 <link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -13,7 +13,7 @@
 	<div th:replace="fragments/header :: header"></div>
 		<div class="container">
 			<div class="page-header">
- 				<h1>Crie uma conta na Multicores</h1>
+ 				<h1>Seu Perfil</h1>
  			</div>
  			<form th:replace="fragments/user-form :: user-form"></form>
 		</div>
@@ -22,12 +22,12 @@
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="http://digitalbush.com/files/jquery/maskedinput/rc3/jquery.maskedinput.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.js"></script>
-<script type="text/javascript" src="js/componentes.js"></script>
-<script type="text/javascript" src="js/cadastro.js"></script>
+<script type="text/javascript" src="/js/componentes.js"></script>
+<script type="text/javascript" src="/js/editar-perfil.js"></script>
 <script>
 $(document).ready(function () {
     $('.datepicker').datepicker({

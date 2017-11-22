@@ -8,7 +8,7 @@
 </head>
 <body>
  <div id="app">
- 	<app-header></app-header>
+ 	<div th:replace="fragments/header :: header"></div>
  		<div class="container">
  			<div class="page-header">
  				<h1>Sobre a Empresa</h1>
@@ -30,7 +30,7 @@
 			colaboradores, clientes e fornecedores.
  			
  		</div>
- 	<app-footer></app-footer>
+ 	<div th:replace="fragments/footer :: footer"></div>
  </div>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

@@ -4,94 +4,20 @@
 <meta charset="UTF-8"/>
 <title>Cadastro</title>
 
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
 </head>
 <body>
 <div id="app">
-	<app-header></app-header>
+	<div th:replace="fragments/header :: header"></div>
 		<div class="container">
 			<div class="page-header">
  				<h1>Crie uma conta na Multicores</h1>
  			</div>
- 			<form>
- 				<div class="form-group">
- 					<div class="row">
- 						<fieldset class="col-md-4">
- 							<legend>Dados Pessoais</legend>
- 							
- 							<div class="form-group">
-                                  <label for="nome">Nome</label>
-                                  <input v-model="user.nome" type="text" class="form-control" id="nome" name="nome" autofocus="true"/>
-                            </div>
-                            
-                            <div class="form-group">
-                                  <label for="sobrenome">Sobrenome</label>
-                                  <input v-model="user.sobrenome" type="text" class="form-control" id="sobrenome" name="sobrenome"/>
-                            </div>
-                            
-                            <div class="form-group">
-                                  <label for="endereco">Endereço</label>
-                                  <input v-model="user.endereco" type="text" class="form-control" id="endereco" name="endereco"/>
-                            </div>
-                            
-                            <div class="form-group">
-                                  <label for="cpf">CPF</label>
-                                  <input v-model="user.cpf" type="text" class="form-control" id="cpf" name="cpf"/>
-                            </div>
-                            
-                            <div class="form-group">
-                                  <label for="validade">Data de Nascimento</label>
-                                  <input v-model="user.validade" type="text" class="form-control datepicker" id="validade" name="validade"/>
-                            </div>
-                            
- 						</fieldset>
- 						
- 						<fieldset class="col-md-4">
- 							<div class="form-group">
-                                  <label for="nomePai">Nome do Pai</label>
-                                  <input v-model="user.nomePai" type="text" class="form-control" id="nomePai" name="nomePai"/>
-                                  
-                                  <label for="nomeMae">Nome da Mãe</label>
-                                  <input v-model="user.nomeMae" type="text" class="form-control" id="nomeMae" name="nomeMae"/>
-                            </div>
-                            
-                            <div class="form-group">
-                                  <label for="instituicaoEnsino">Instituição de Ensino</label>
-                                  <input v-model="user.instituicaoEnsino" type="text" class="form-control" id="instituicaoEnsino" name="instituicaoEnsino"/>                                  
-                            </div>
- 						</fieldset>
-
-						<fieldset class="col-md-4">
-							<legend>Dados Cadastrais</legend>
-							
-							<div class="form-group">
-                                 <label for="email">Email</label>
-
-                                 <div class="input-group">
-                                   	   <span class="input-group-addon">@</span>
-                               	       <input v-model="user.email" type="email" class="form-control" id="email" name="email" placeholder="email@exemplo.com"/>
-                           	     </div>
-                           	     O email será usado para se autenticar.
-                           	</div>
-                           	
-                           	<div class="form-group">
-                                  <label for="senha">Senha</label>
-                                  <input v-model="user.senha" type="password" class="form-control" id="senha" name="senha"/>
-                            </div>
-						</fieldset>
- 					</div>
- 					<button type="submit" class="btn btn-primary btn-lg pull-right" v-on:click="cadastrar($event)">
-                      <span class="glyphicon glyphicon-thumbs-up"></span>
-                      Cadastrar-se
-                </button>
-                {{result}}
- 				</div>
- 				
- 			</form>
+ 			<form th:replace="fragments/user-form :: user-form"></form>
 		</div>
-	<app-footer></app-footer>
+	<div th:replace="fragments/footer :: footer"></div>
 </div>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
