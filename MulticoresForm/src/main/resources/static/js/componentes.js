@@ -10,7 +10,7 @@ Vue.component('app-header', {
 		            <li><a href="/">Home</a></li>\
 					<li><a href="/sobre">Sobre a Empresa</a></li>\
 					<li><a href="#">Eventos</a></li>\
-					<li><a href="#">Produtos</a></li>\
+					<li><a href="/produtos">Produtos</a></li>\
 					<li><a href="#">Login</a></li>\
 					<li><a href="#">Fale Conosco</a></li>\
 		        </ul>\

@@ -21,4 +21,8 @@ public class MainController {
 	public String mostraCadastro() {
 		return "cadastro";
 	}
+	@GetMapping("/produtos")
+	public String mostraProdutos() {
+		return "produto";
+	}
 }

@@ -1,0 +1,31 @@
+<html>
+	<head>
+	<meta charset="UTF-8"/>
+		<title>Multicores Formatura</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+	</head>
+	<body>
+		<div id="app">
+			<app-header></app-header>
+			<div>
+			  <ol>
+			    <li v-for="todo in result">
+			      {{ todo.nome }}
+			      {{ todo.descricao }}
+			      
+			    </li>
+			  </ol>
+			</div>
+			<app-footer></app-footer>
+		</div>
+	
+	</body>
+	
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.js"></script>
+    <script type="text/javascript" src="js/componentes.js"></script>
+    <script type="text/javascript" src="js/produto.js"></script>
+</html>
