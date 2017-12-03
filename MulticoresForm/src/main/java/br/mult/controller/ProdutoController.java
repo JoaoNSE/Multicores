@@ -20,4 +20,9 @@ public class ProdutoController {
 		return produtoRepo.findAll();
 	}
 	
+	
+	@PostMapping(value = "/removerProduto")
+	public void removerProduto(Produto produto) {
+		produtoRepo.delete(produto);
+	}
 }

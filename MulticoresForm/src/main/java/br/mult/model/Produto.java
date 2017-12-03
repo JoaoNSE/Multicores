@@ -1,5 +1,7 @@
 package br.mult.model;
 
+import java.sql.Blob;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,17 +21,18 @@ public class Produto {
 	
 	@NotNull
 	@Size(min=3, max=300, message="O tamanho do descricao deve ser entre {min} e {max}")
-	private String descricao;
+	private double valor;
 	
+	private Blob a;
 	public Produto() {
 		
 	}
 	
-	public Produto(Long id, String nome, String descricao){
+	public Produto(Long id, String nome, double valor){
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.descricao = descricao;
+		this.valor = valor;
 	}
 
 	public Long getId() {
@@ -48,12 +51,13 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public double getValor() {
+		return valor;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setValor(double valor) {
+		this.valor = valor;
 	}
+
 	
 }

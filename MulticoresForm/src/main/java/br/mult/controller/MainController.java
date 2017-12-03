@@ -30,4 +30,9 @@ public class MainController {
 	public String mostraLogin() {
 		return "login";
 	}
+	
+	@GetMapping("/produtos")
+	public String listarProdutos() {
+		return "produto";
+	}
 }
