@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Cadastrar Produto</title>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+</head>
+<body>
+<div id="app">
+	<app-header></app-header>
+		<div class="container">
+			<div class="page-header">
+ 				<h1>Crie uma conta na Multicores</h1>
+ 			</div>
+ 			<form>
+ 				<div class="form-group">
+ 					<div class="row">
+ 						<fieldset class="col-md-4">
+ 							<legend>Cadastro de Produtos</legend>
+ 							
+ 							<div class="form-group">
+                                  <label for="nome">Nome</label>
+                                  <input v-model="prod.nome" type="text" class="form-control" id="nome" name="nome" autofocus="true"/>
+                            </div>
+                            
+                            <div class="form-group">
+                                  <label for="valor">Valor</label>
+                                  <input v-model="prod.valor" type="text" class="form-control" id="valor" name="valor"/>
+                            </div>
+                                
+ 						</fieldset>
+
+ 					</div>
+ 					<button type="submit" class="btn btn-primary btn-lg pull-right" v-on:click="cadastrar($event)">
+                      <span class="glyphicon glyphicon-thumbs-up"></span>
+                      Cadastrar Produto
+                </button>
+ 				</div>
+ 				
+ 			</form>
+		</div>
+	<app-footer></app-footer>
+</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.js"></script>
+<script type="text/javascript" src="js/componentes.js"></script>
+<script type="text/javascript" src="js/inserir-produto"></script>
+</html>

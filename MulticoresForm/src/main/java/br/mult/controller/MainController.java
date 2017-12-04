@@ -35,4 +35,10 @@ public class MainController {
 	public String listarProdutos() {
 		return "produto";
 	}
+	
+	@GetMapping("/produtos/cadastro")
+	public String cadastrarProduto() {
+		return "inserir-produto";
+	}
+	
 }
