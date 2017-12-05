@@ -80,7 +80,7 @@ public class LoginController {
 		return "Bem vindo";
 	}
 	
-	@PostMapping(value = "/logout")
+	@RequestMapping(value = "/logout")
 	public void efetuaLogout(HttpSession session, HttpServletResponse response) {
 		if (session.getAttribute("usuarioLogado") != null) {
 			session.removeAttribute("usuarioLogado");
@@ -90,6 +90,8 @@ public class LoginController {
 			session.removeAttribute("adm");
 			
 		}
+		
+		
 		
 		try {
 			response.sendRedirect("/");

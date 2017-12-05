@@ -39,6 +39,10 @@ public class MainController {
 		return "produto";
 	}
 	
+	@GetMapping("/produtosAdmin")
+	public String listarProdutosAdmin() {
+		return "produtoAdmin";
+	}
 	@GetMapping("/cadastrarProduto")
 	public String cadastrarProduto() {
 		return "cadastrarProduto";

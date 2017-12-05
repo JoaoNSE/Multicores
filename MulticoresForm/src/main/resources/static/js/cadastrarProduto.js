@@ -18,7 +18,7 @@ new Vue({
 			axios.post('/produtos/cadastrar', data1.produto)
 			.then(function (response) {
 				if (response.data.includes("redirect")) {
-					window.location.replace("/produtos");
+					window.location.replace("/produtosAdmin");
 				}
 			    data1.result =  response.data;
 			  })

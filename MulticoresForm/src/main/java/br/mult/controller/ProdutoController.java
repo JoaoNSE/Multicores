@@ -47,7 +47,7 @@ public class ProdutoController {
 			return retorno;
 		}
 		produtoRepo.save(produto);
-		return "redirect:/produtos";
+		return "redirect:/produtosAdmin";
 		
 	}
 	

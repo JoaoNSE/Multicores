@@ -15,6 +15,7 @@
 			<div th:replace="fragments/header :: header"></div>
 			<div class="container" >
 			    <h1> Produtos da multicores</h1>
+				<div class="panel panel-default">
 				<table class="table table-hover">
 					<tr>
 						<th>Nome</th>
@@ -23,10 +24,18 @@
 			    <tr v-for="todo in result">
 							<td>{{todo.nome}}</td>
 							<td>{{todo.valor}}</td>
-							
+							<td>
+				<button type="submit" class="btn btn-primary btn-lg pull-right" v-on:click="removerProduto(todo)">
+			      Deletar
+			      </button>					
+				  <button type="submit" class="btn btn-primary btn-lg pull-right" v-on:click="alterarProduto(todo.id)">
+			      Alterar
+			      </button> 
+				</td>
 				</tr>
 				
 			  </table>
+				</div>
 			</div>
 			<div th:replace="fragments/footer :: footer"></div>
 		</div>
