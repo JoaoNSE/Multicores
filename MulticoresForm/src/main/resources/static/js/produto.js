@@ -40,7 +40,6 @@ new Vue({
 			        });
 			       },
 		alterarProduto(id){
-			    	   alert(id);
 			    	   window.location.replace("/produtos/"+id+"/update");
 			       }
 		

@@ -16,14 +16,7 @@ new Vue({
 		var id = window.location.href;
 		id = id.split("/");
 		id = id[4];
-		alert(id);
-		/*axios.post('/getProdutoSelecionado', {
-			param1: id;
-		}).then(function(response) {
-			data1.produto = response.data;
-		});*/
-		
-	    axios.post('/getProdutoSelecionado/'+id)
+		axios.post('/getProdutoSelecionado/'+id)
 	    .then(function(response) {
 			data1.produto = response.data;
 		});
