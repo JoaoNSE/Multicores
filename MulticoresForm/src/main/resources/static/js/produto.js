@@ -20,9 +20,28 @@ new Vue({
 		  });
 	},
 	methods : {
-		listar: function(event) {
-			
-		}
+		removerProduto(produto){
+			   let self = this;
+			   swal({  title: "Você tem certeza?",
+			           text: 'Deseja apagar ' + produto.nome,   
+			           type: "warning",   
+			           showCancelButton: true,   
+			           confirmButtonColor: "#DD6B50",   
+			           cancelButtonText: "Cancelar",
+			           confirmButtonText: "Sim, pode apagar!",
+			           showLoaderOnConfirm: true,   
+			           closeOnConfirm: false }, function(){   
+			        	   axios.post('/produtos/'+produto.id+'/remover')
+			   			.then(function (response) {
+			                         swal("Cervejaria removida!")
+			                         self.loadBreweries()
+			            })
+			            window.location.replace("/produtos");
+			        });
+			       },
+		alterarProduto(id){
+			    	   window.location.replace("/produtos/"+id+"/update");
+			       }
 		
 	}
 })

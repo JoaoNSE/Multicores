@@ -68,6 +68,12 @@ public class LoginController {
 		
 		if (users.size() == 1 ) {
 			usuario.setId(users.get(0).getId());
+			if (usuario.getId() == 1) {
+				session.setAttribute("adm", usuario);
+			}
+			else {
+				session.setAttribute("adm", null);
+			}
 			session.setAttribute("usuarioLogado", usuario);
 		    return "redirect:/";
 		}
@@ -80,6 +86,12 @@ public class LoginController {
 			session.removeAttribute("usuarioLogado");
 			
 		}
+		if (session.getAttribute("adm") != null) {
+			session.removeAttribute("adm");
+			
+		}
+		
+		
 		
 		try {
 			response.sendRedirect("/");

@@ -1,7 +1,5 @@
 package br.mult.model;
 
-import java.sql.Blob;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,10 +18,8 @@ public class Produto {
 	private String nome;
 	
 	@NotNull
-	@Size(min=3, max=300, message="O tamanho do descricao deve ser entre {min} e {max}")
 	private double valor;
 	
-	private Blob a;
 	public Produto() {
 		
 	}
