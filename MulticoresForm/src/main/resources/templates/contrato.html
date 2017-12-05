@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Cadastro</title>
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+</head>
+<body>
+<div id="app">
+	<div th:replace="fragments/header :: header"></div>
+		<div class="container">
+			<div class="page-header">
+ 				<h1>Simulação de Contrato Com a Multicores</h1>
+ 			</div>
+ 			<form th:replace="fragments/contrato-form :: contrato-form"></form>
+		</div>
+	<div th:replace="fragments/footer :: footer"></div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://unpkg.com/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="http://digitalbush.com/files/jquery/maskedinput/rc3/jquery.maskedinput.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.js"></script>
+<script type="text/javascript" src="js/componentes.js"></script>
+<script type="text/javascript" src="js/contrato.js"></script>
+<script>
+$(document).ready(function () {
+	$(".dropdown-toggle").dropdown();
+    $('.datepicker').datepicker({
+        format: "dd/mm/yyyy",
+        language: "pt-BR"
+    });
+    $('#cpf').mask('999.999.999-99', {reverse: true});    
+    
+    
+  });
+</script>
+</html>

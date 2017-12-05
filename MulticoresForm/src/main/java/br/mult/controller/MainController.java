@@ -35,4 +35,9 @@ public class MainController {
 	public String listarProdutos() {
 		return "produto";
 	}
+	
+	@GetMapping("/contrato")
+	public String simularContrato() {
+		return "contrato";
+	}
 }

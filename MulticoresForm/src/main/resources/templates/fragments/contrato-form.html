@@ -1,0 +1,112 @@
+<form th:fragment="contrato-form">
+	<div class="form-group">
+		<div class="row">
+			<fieldset>
+				<legend>Dados Pessoais</legend>
+				<div class="col-md-6">
+						<div class="form-group">
+                        	<label for="nome">Nome</label>
+                              <input v-model="user.nome" type="text" class="form-control" id="nome" name="nome" disabled="true"/>
+                        </div>
+                        
+                        <div class="form-group">
+                              <label for="sobrenome">Sobrenome</label>
+                              <input v-model="user.sobrenome" type="text" class="form-control" id="sobrenome" name="sobrenome" disabled="true"/>
+                        </div>
+                        
+                        <div class="form-group">
+                              <label for="endereco">Endereço</label>
+                              <input v-model="user.endereco" type="text" class="form-control" id="endereco" name="endereco" disabled="true"/>
+                        </div>
+                        
+                        <div class="form-group">
+                              <label for="cpf">CPF</label>
+                              <input v-model="user.cpf" type="text" class="form-control" id="cpf" name="cpf" disabled="true"/>
+                        </div>
+                        
+                        <div class="form-group">
+                              <label for="validade">Data de Nascimento</label>
+                              <input v-model="user.validade" type="text" class="form-control datepicker" id="validade" name="validade" disabled="true"/>
+                        </div>
+                        
+				</div>
+				<div class="col-md-6">
+						<div class="form-group">
+                              <label for="nomePai">Nome do Pai</label>
+                              <input v-model="user.nomePai" type="text" class="form-control" id="nomePai" name="nomePai" disabled="true"/>
+                        </div>
+                        <div class="form-group">      
+                              <label for="nomeMae">Nome da Mãe</label>
+                              <input v-model="user.nomeMae" type="text" class="form-control" id="nomeMae" name="nomeMae" disabled="true"/>
+                        </div>
+                        
+                        <div class="form-group">
+                              <label for="instituicaoEnsino">Instituição de Ensino</label>
+                              <input v-model="user.instituicaoEnsino" type="text" class="form-control" id="instituicaoEnsino" name="instituicaoEnsino" disabled="true"/>                                  
+                        </div>
+                        
+                        <div class="form-group">
+                              <label for="email">Email</label>
+                              <input v-model="user.email" type="text" class="form-control" id="email" name="email" disabled="true"/>                                  
+                        </div>
+                        </div>
+			</fieldset>
+			</div>
+			<div class="row">
+				<legend>Produtos</legend>
+				<div class="panel panel-default">
+				<div class="panel-head">
+				
+				<span class="session-title">Adicionar Produto</span>
+		
+				<div class="btn-group pull-right">
+				  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    {{pSel.nome}} <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+				  	<li v-for="(produto, index) in produtos" :key="produto">
+				  	<a v-on:click="selecionaProduto(produto)">{{produto.nome}}</a>
+				  	</li>
+				  </ul>
+				  
+				  <a class="btn btn-primary" v-on:click="adicionaProduto($event)">Adicionar</a>
+				</div>
+				</div>
+				<div class="panel-body">
+				<table class="table table-hover">
+					<tr>
+						<th>Quantidade</th>
+						<th>Nome</th>
+						<th>Valor Unitário</th>
+						<th>Valor Total</th>
+						<th>Ações</th>
+					</tr>
+					<tr v-for="(produto, index) in produtosSel" :key="produto">
+						<td><input type="number" name="qtd" v-model="produto.qtd" v-on:change="calculaTotal()"></input></td>
+						<td>{{produto.nome}}</td>
+						<td>{{produto.valor}}</td>
+						<td>{{produto.qtd * produto.valor}}</td>
+
+						<td><a class="btn btn-default" v-on:click="removeProduto(index, $event)">Remover</a></td>
+					</tr>
+					<tr>
+						<th>Valor Total</th>
+						<td></td>
+						<td></td>
+						<td>{{valorTotal}}</td>
+						<td></td>
+					</tr>
+				</table>
+				</div>
+				</div>
+			</div>
+		
+		<a type="submit" class="btn btn-primary btn-lg pull-right" v-on:click="cadastrar($event)">
+                  		{{btnAcao}}
+            		</a>
+		
+		
+            {{result}}
+	</div>
+	
+</form>
