@@ -13,6 +13,7 @@
 			<li><a href="/login" th:text="Login" th:unless="${session.usuarioLogado != null}">[...]</a></li>
 			<li><a href="/logout" th:text="Sair" th:unless="${session.usuarioLogado == null}">[...]</a></li>
 			<li><a href="/cadastro" th:text="Cadastre-se" th:unless="${session.usuarioLogado != null}">[...]</a></li>
+			<li><a href="/contrato" th:text="Simulação" th:unless="${session.usuarioLogado == null}">[...]</a></li>
 			<li><a href="#">Fale Conosco</a></li>
 			<li><a th:href="@{'/usuarios/' + ${session.usuarioLogado.id} + '/update'}" th:text="Perfil" th:unless="${session.usuarioLogado == null}">[...]</a></li>
         </ul>
