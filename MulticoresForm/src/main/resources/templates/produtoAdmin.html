@@ -24,7 +24,14 @@
 			    <tr v-for="todo in result">
 							<td>{{todo.nome}}</td>
 							<td>{{todo.valor}}</td>
-							
+							<td>
+				<button type="submit" class="btn btn-primary btn-lg pull-right" v-on:click="removerProduto(todo)">
+			      Deletar
+			      </button>					
+				  <button type="submit" class="btn btn-primary btn-lg pull-right" v-on:click="alterarProduto(todo.id)">
+			      Alterar
+			      </button> 
+				</td>
 				</tr>
 				
 			  </table>

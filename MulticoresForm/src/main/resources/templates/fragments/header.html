@@ -7,7 +7,9 @@
             <li><a href="/">Home</a></li>
 			<li><a href="/sobre">Sobre a Empresa</a></li>
 			<li><a href="#">Eventos</a></li>
-			<li><a href="/produtos">Produtos</a></li>
+			<li><a href="/produtosAdmin" th:text="Produtos" th:unless="${session.adm == null}">Produtos</a></li>
+			<li><a href="/cadastrarProduto" th:text="CadastarProdutos" th:unless="${session.adm == null}">Produtos</a></li>
+			<li><a href="/produtos" th:text="Produtos" th:unless="${session.adm != null}"> ProdutosUsuario</a></li>
 			<li><a href="/login" th:text="Login" th:unless="${session.usuarioLogado != null}">[...]</a></li>
 			<li><a href="/logout" th:text="Sair" th:unless="${session.usuarioLogado == null}">[...]</a></li>
 			<li><a href="/cadastro" th:text="Cadastre-se" th:unless="${session.usuarioLogado != null}">[...]</a></li>
