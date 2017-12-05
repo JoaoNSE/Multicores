@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Cadastrar Produto</title>
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+</head>
+<body>
+<div id="app">
+	<div th:replace="fragments/header :: header"></div>
+		<div class="container">
+			<div class="page-header">
+ 				<h1>Cadastre o produto desejado</h1>
+ 			</div>
+ 			<form th:replace="fragments/produto-form :: produto-form"></form>
+		</div>
+	<div th:replace="fragments/footer :: footer"></div>
+</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="http://digitalbush.com/files/jquery/maskedinput/rc3/jquery.maskedinput.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.js"></script>
+<script type="text/javascript" src="js/componentes.js"></script>
+<script type="text/javascript" src="js/cadastrarProduto.js"></script>
+
+</html>

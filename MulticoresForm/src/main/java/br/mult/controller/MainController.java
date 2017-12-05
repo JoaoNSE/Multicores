@@ -2,6 +2,9 @@ package br.mult.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
@@ -34,5 +37,16 @@ public class MainController {
 	@GetMapping("/produtos")
 	public String listarProdutos() {
 		return "produto";
+	}
+	
+	@GetMapping("/cadastrarProduto")
+	public String cadastrarProduto() {
+		return "cadastrarProduto";
+	}
+	
+	@RequestMapping (value = "/produtos/{id}/update")
+	public String updateProduto(@PathVariable long id) {
+		return "editar-produto";
+		
 	}
 }
